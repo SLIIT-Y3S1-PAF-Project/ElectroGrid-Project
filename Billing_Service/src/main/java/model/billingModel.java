@@ -69,13 +69,6 @@ public class billingModel {
 		 output += "<td>" + tax + "</td>"; 
 		 output += "<td>" + totalAmount + "</td>"; 
 	 
-		 // buttons
-		 output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary'></td>"
-		 + "<td><form method='post' action='items.jsp'>"
-		 + "<input name='btnRemove' type='submit' value='Remove' class='btn btn-danger'>"
-		 + "<input name='itemID' type='hidden' value='" + invoiceNo 
-		 + "'>" + "</form></td></tr>"; 
-		 } 
 		 con.close(); 
 	 
 		 // Complete the html table
@@ -83,7 +76,7 @@ public class billingModel {
 		 } 
 		 catch (Exception e) 
 		 { 
-		 output = "Error while reading the reg_cus_bills."; 
+		 output = "Error while reading Bill Data."; 
 		 System.err.println(e.getMessage()); 
 		 } 
 		 return output; 
@@ -125,7 +118,7 @@ public class billingModel {
 			 } 
 			 catch (Exception e) 
 			 { 
-			 output = "Error while inserting the item."; 
+			 output = "Error while inserting Bill Data."; 
 			 System.err.println(e.getMessage()); 
 			 } 
 			 return output;
@@ -165,7 +158,7 @@ public class billingModel {
 		 } 
 		 catch (Exception e) 
 		 { 
-		 output = "Error while updating the item."; 
+		 output = "Error while updating Bill Data."; 
 		 System.err.println(e.getMessage()); 
 		 } 
 		 return output; 
@@ -198,7 +191,7 @@ public class billingModel {
 			 } 
 			 catch (Exception e) 
 			 { 
-			 output = "Error while deleting the item."; 
+			 output = "Error while deleting Bill Data."; 
 			 System.err.println(e.getMessage()); 
 			 } 
 			 return output; 
