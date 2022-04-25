@@ -83,7 +83,7 @@ public class PowerGeneratorService {
 	
 	
 	//login
-	/*@POST
+	@POST
 	@Path("/login") 
 	@Produces(MediaType.TEXT_HTML) 
 	public String login(@FormParam("username") String username, 
@@ -91,5 +91,5 @@ public class PowerGeneratorService {
 	{ 
 		String output = pGen.login(username, password);
 		return output;
-	}*/
+	}
 }
