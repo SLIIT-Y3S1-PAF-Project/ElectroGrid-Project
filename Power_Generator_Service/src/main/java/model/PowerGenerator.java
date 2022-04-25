@@ -225,7 +225,7 @@ public class PowerGenerator {
 	 } 
 	
 	
-	/*public String login(String username, String password) {
+	public String login(String username, String password) {
 		String output = null;
 		try
 		{
@@ -239,13 +239,12 @@ public class PowerGenerator {
 			
 			 String query = "select password from users where username=? and password=?"; 
 			 PreparedStatement preparedStmt =  con.prepareStatement(query);
-			 boolean rs = preparedStmt.executeQuery() != null;
 			 
 			 // binding values
 			 preparedStmt.setString(1, username); 
 			 preparedStmt.setString(2, password); 
 			
-			 if(rs) {
+			 if(preparedStmt != null) {
 				 output =  "Login success";
 			 }
 			 else {
@@ -261,6 +260,6 @@ public class PowerGenerator {
 		}
 			
 		return output;
-	}*/
+	}
 
 }
