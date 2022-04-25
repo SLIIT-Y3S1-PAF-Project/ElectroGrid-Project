@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2022 at 02:30 PM
+-- Generation Time: Apr 25, 2022 at 11:26 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -180,8 +180,34 @@ INSERT INTO `reg_cus_billing` (`invoiceNo`, `date`, `cusName`, `accNo`, `noOfUni
 (4, '2022-02-01', 'P.K.Oman', 985463255, 32, 5, 60, 220),
 (5, '2022-02-01', 'Jhon', 978954628, 100, 28, 480, 3280),
 (6, '2022-03-05', 'N Somapala', 125478412, 100, 28, 480, 3280),
-(7, '2022-03-05', 'N Somapala', 974812628, 60, 5, 60, 90),
-(8, '2022-04-23', 'test', 98454789, 78, 10, 90, 870);
+(7, '2022-02-01', 'Nimali Kumara', 974812628, 60, 50, 60, 90),
+(9, '2022-04-24', 'Kumara Y.K.', 745814782, 134, 32, 480, 4768);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `shedules`
+--
+
+CREATE TABLE `shedules` (
+  `sID` int(11) NOT NULL,
+  `sPeriod` varchar(20) NOT NULL,
+  `sTotHrs` varchar(20) NOT NULL,
+  `sFromTime` varchar(20) NOT NULL,
+  `sToTime` varchar(20) NOT NULL,
+  `sArea` varchar(20) NOT NULL,
+  `sSub` varchar(20) NOT NULL,
+  `sProvince` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `shedules`
+--
+
+INSERT INTO `shedules` (`sID`, `sPeriod`, `sTotHrs`, `sFromTime`, `sToTime`, `sArea`, `sSub`, `sProvince`) VALUES
+(8, '12toMidnight', '3', '10pm', '12pm', 'Kottawa', 'Colombo Zone 3ii', 'Western'),
+(10, '12toMidnight', '3', '5pm', '8pm', 'Maharagama', 'Colombo Zone 3', 'Western'),
+(11, '12toMidnight', '3', '5pm', '8pm', 'Demodara', 'Uwa zone A', 'Uwa');
 
 -- --------------------------------------------------------
 
@@ -250,6 +276,12 @@ ALTER TABLE `reg_cus_billing`
   ADD PRIMARY KEY (`invoiceNo`);
 
 --
+-- Indexes for table `shedules`
+--
+ALTER TABLE `shedules`
+  ADD PRIMARY KEY (`sID`);
+
+--
 -- Indexes for table `unitprice_tax`
 --
 ALTER TABLE `unitprice_tax`
@@ -287,7 +319,13 @@ ALTER TABLE `powergenerators`
 -- AUTO_INCREMENT for table `reg_cus_billing`
 --
 ALTER TABLE `reg_cus_billing`
-  MODIFY `invoiceNo` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `invoiceNo` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `shedules`
+--
+ALTER TABLE `shedules`
+  MODIFY `sID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
