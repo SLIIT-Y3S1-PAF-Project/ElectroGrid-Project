@@ -1,6 +1,9 @@
 package model;
 
-import java.sql.*; 
+import java.sql.*;
+
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.WebResource; 
 
 public class billingModel {
 
@@ -196,6 +199,15 @@ public class billingModel {
 			 } 
 			 return output; 
 		}
+		 
+		 //inter service communication
+		 public String readAllCusDetails(int cusId){
+				Client c = Client.create();
+				WebResource resource = c.resource("http://localhost:8095/BillingService/billingService/bills/readBills");
+				String output = resource.get(String.class);
+				
+				return output;
+			}
 	 
 	 
 }

@@ -101,4 +101,11 @@ public class billingService {
 		return output; 
 	}
 	
+	//inter service communication
+		@GET
+		@Path("/ReadAll/{AccNo}")
+		@Produces(MediaType.TEXT_PLAIN)
+		public String readAll(@PathParam("cusID")int cusID){
+			return billingObj.readAllCusDetails(cusID);
+		}
 }
